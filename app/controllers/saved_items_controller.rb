@@ -11,9 +11,13 @@ class SavedItemsController < ApplicationController
     end
 
     def destroy
-        resource = SavedItem.find(params[:id])
-        resource.destroy
-        head :no_content
+        resource = SavedItem.find_by(id:params[:id])
+        if resource
+            resource.destroy
+            head :no_content
+        else
+            render json: {error: "resource not found"}, status: not_found
+        end 
     end
 
     private
