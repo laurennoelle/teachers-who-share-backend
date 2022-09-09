@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  subject: MyString
+  grade: 1
+  description: MyText
+  reviews: 1
+  image: MyString
+
+two:
+  title: MyString
+  subject: MyString
+  grade: 1
+  description: MyText
+  reviews: 1
+  image: MyString
