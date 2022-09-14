@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :saved_items
   resources :resources
-  resources :users, only: [:create, :index]
+  resources :users, only: [:create, :show]
 
   post '/login', to: 'auth#create'
   get '/me', to: 'users#show'

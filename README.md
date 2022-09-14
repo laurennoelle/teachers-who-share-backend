@@ -1,24 +1,58 @@
 # README
 ## Teachers Who Share App - Backend
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# API Docs
+## GET /users
 
-Things you may want to cover:
+Get info for current user
 
-* Ruby version
+```json
+{
+    "username": "my_user",
+    "email": "My Email",
+    "id" : 1234
+}
+```
 
-* System dependencies
+## POST /users
 
-* Configuration
+Create a new user:
 
-* Database creation
+```json
+{
+    "user": {
+        "username": "my_user",
+        "password": "my_pass",
+        "email": "My Email"
+    }
+}
+```
+and returns the user object
 
-* Database initialization
+## POST /login
 
-* How to run the test suite
+Accepts a JSON object with username and password:
 
-* Services (job queues, cache servers, search engines, etc.)
+```json
+{
+    "user": {
+      "username": "my_user",
+      "password": "my_pass"
+    }
+}
+```
+Returns a JSON object with the logged in user informations:
 
-* Deployment instructions
+```json
+{
+    "username": "my_user",
+    "email": "My Email",
+    "id": "12345"
+}
+```
+or an error message if the username or password is incorrect:
 
-* ...
+```json
+{
+    "message": "Invalid username or password"
+}
+```
